@@ -1,0 +1,23 @@
+
+.app-clock{
+  display: flex;
+  align-items: center;
+
+  &-hours,
+  &-semicol,
+  &-minutes{
+    font-size: 2rem;
+    color: var(--color-dark-2);
+  }
+
+  &-semicol{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    //color: var(--color-light-0);
+    min-width: 1rem;
+  }
+  &-minutes{
+    //color: var(--color-light-1);
+  }
+}

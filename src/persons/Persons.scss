@@ -1,0 +1,25 @@
+
+
+.persons{
+  padding: 1rem;
+  display: flex;
+
+  &-add{
+    display: flex;
+    flex-direction: column;
+    min-width: 25rem;
+  }
+
+  &-input{
+    display:flex;
+    padding: 1rem 0rem;
+
+    input:nth-child(1){
+      flex:1;
+    }
+  }
+  &-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
