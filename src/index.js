@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {Provider} from 'react-redux';
-import {createStore, combineReducers , applyMiddleware} from 'redux';
+import {
+  createStore, combineReducers , 
+  applyMiddleware , compose} from 'redux';
 //import reducer from './store/reducers';
 import { 
   loaderReducer, headerReducer,
@@ -23,12 +25,14 @@ let reducers = combineReducers({
   persons: personsReducer 
 });
 
-//let middleware = ;
-
+//store enhancers (Redux devtools and middleware)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const myStore = createStore(
   reducers,
-  applyMiddleware(myLogger, myAsyncAction, myActionChanger)
+  composeEnhancers(
+    applyMiddleware(myLogger, myAsyncAction, myActionChanger)
+  )
 );
 
 ReactDOM.render(
