@@ -11,5 +11,9 @@ export const SET_APP_LOGO = "SET_APP_LOGO";
 
 //person actions
 export const ADD_PERSON = "ADD_PERSON";
+export const ADD_PERSON_OK = "ADD_PERSON_OK";
+export const ADD_PERSON_ERR = "ADD_PERSON_ERR";
 export const DELETE_PERSON = "DELETE_PERSON";
+export const DELETE_PERSON_OK = "DELETE_PERSON_OK";
+export const DELETE_PERSON_ERR = "DELETE_PERSON_ERR";
 

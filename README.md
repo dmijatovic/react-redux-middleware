@@ -1,8 +1,6 @@
-# React - redux custom middleware test
+# React - redux custom middleware demo
 
-This is simple webpack 4 starter with scss enabled. I created this starter for testing webpack 4 approach and redux custom middleware.
-I started completely from scratch taking the latest versions avaliable at the time (2018-07-07).
-
+This is simple webpack 4 starter with scss enabled. I created it to test application of redux custom middleware. The custom middleware is in store folder middleware.js. The app uses 3 custom middlewares where one function returnes a promise. Custom middleware will intercept "ADD_PERSON" action and after async function is resolved will pass it to next middleware which will change action type from ADD_PERSON to PERSON_ADDED.
 
 ## NPM installation scripts
 

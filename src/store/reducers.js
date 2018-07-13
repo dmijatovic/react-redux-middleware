@@ -69,13 +69,23 @@ export const personsReducer = (state=[],action)=>{
   
   switch (action.type){
     case actionType.ADD_PERSON:
+    case actionType.ADD_PERSON_OK:
       //use concat with arrays
       //to return new object (immutable)
       return state.concat({
         ...action.payload,
         id: Math.random()*1000000
       });
-
+    
+    case actionType.ADD_PERSON_ERR:
+      return {
+        ...state,
+        err:{
+          actionType: actionType.ADD_PERSON,
+          ...action.err 
+        }
+      }
+    
     case actionType.DELETE_PERSON:
       //use filter to return new object (immutable)
       return state.filter(item=> item.id!=action.payload)

@@ -2,23 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {Provider} from 'react-redux';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers , applyMiddleware} from 'redux';
 //import reducer from './store/reducers';
 import { 
   loaderReducer, headerReducer,
   personsReducer 
 } from './store/reducers';
+//custom middleware
 
+import {
+  myLogger, myActionChanger, myAsyncAction 
+} from './store/middleware';
 
 import App from './App';
 import './styles/index.scss';
 
+let reducers = combineReducers({
+  header: headerReducer,
+  loader: loaderReducer,
+  persons: personsReducer 
+});
+
+//let middleware = ;
+
+
 const myStore = createStore(
-  combineReducers({
-    header: headerReducer,
-    loader: loaderReducer,
-    persons: personsReducer 
-  })
+  reducers,
+  applyMiddleware(myLogger, myAsyncAction, myActionChanger)
 );
 
 ReactDOM.render(

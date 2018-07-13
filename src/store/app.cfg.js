@@ -8,7 +8,7 @@ export const Config = {
     logo:{
       src:'img/dv4all_logo_v7_2016_hd.svg'
     },
-    appTitle:'This is app title received from Redux',
+    appTitle:'React Redux Custom Middleware',
     pageTitle: "Wait for page to load..."
   },
   //clock inital values

@@ -26,7 +26,7 @@ export class App extends React.Component{
       //to hide loader
       this.props.onHideLoader();
       //set page title
-      this.props.setPageTitle("This is page title from redux");
+      this.props.setPageTitle("Test custom middleware - add new person");
     },2000);
   }
   showLoader(){
